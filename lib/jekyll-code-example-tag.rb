@@ -35,13 +35,14 @@ module Jekyll
       site = context['site']
       buttons_class = site['code_example_buttons_class'] ? site['code_example_buttons_class'] : 'buttons'
       button_class = site['code_example_button_class'] ? site['code_example_button_class'] : 'button'
+      list_class = site['code_example_list_class'] ? site['code_example_list_class'] : 'code-tab'
       menu_items = ""
       examples.each_key do |lang|
-        menu_items << "<li><a href='#' class='#{button_class}' target='#{lang}'>#{lang.capitalize}</a></li>"
+	    menu_items << "<li class='#{list_class}'><a href='#' class='#{button_class}' target='#{lang}'>#{lang.capitalize}</a></li>"
       end
       <<EOF
             <div class="#{buttons_class} examples">
-              <ul>
+              <ul class="#{list_class}">
                 #{menu_items}
               </ul>
             </div>
@@ -52,7 +53,7 @@ EOF
       he = HTMLEntities.new
       <<EOF
           <div class="highlight example #{language}">
-            <pre><code class="language #{language}" data-lang="#{language}">#{he.encode(content)}</code></pre>
+            <pre><code class="#{language}" data-lang="#{language}">#{he.encode(content)}</code></pre>
           </div>
 EOF
 

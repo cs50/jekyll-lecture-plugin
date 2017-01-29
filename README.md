@@ -5,7 +5,7 @@ jekyll-code-example-tag
 =======================
 
 Provides a tag that allows you to include in your posts and pages code examples
-for multiple langagues that are kept in seperate files. Another tag allows you
+for multiple languages that are kept in separate files. Another tag allows you
 to combine all code examples that are on a page.
 
 ## Installation
@@ -45,6 +45,13 @@ a div with the class `the_buttons`.
 
 `code_example_buttons_class` defaults to 'buttons', and 
 `code_example_button_class` defaults to 'button'.
+
+Same is true for ```code_example_list_class``` which controls the class used for the ```<li>``` and ```<ul>``` tags.
+The default class is 'code-tab' which can be changed by setting:
+```
+code_example_list_class: my-list-class
+```
+in _config.yml.
 
 ### code_example
 
